@@ -1,10 +1,8 @@
 package net.pixelizedmc.sexymotd;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 import java.util.logging.Logger;
 
@@ -60,14 +58,6 @@ public class Main extends JavaPlugin implements Listener {
 		
 		// Register commands
 		Bukkit.getPluginCommand("motd").setExecutor(new Commands());
-		
-		// hook in metrics
-		try {
-			Metrics metrics = new Metrics(this);
-			metrics.start();
-		} catch (IOException e) {
-			logger.warning("SexyMotd couldn't connect to Metrics :(");
-		}
 		
 		// Extract image
 		if (CM.ENABLE_OVERLAY_IMAGE) {

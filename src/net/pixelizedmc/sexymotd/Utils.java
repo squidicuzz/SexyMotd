@@ -76,11 +76,11 @@ public class Utils {
 			}
 		}
 		
-		int onlinePlayers = Bukkit.getOnlinePlayers().length;
+		int onlinePlayers = Bukkit.getOnlinePlayers().size();
 		int maxPlayers = Bukkit.getMaxPlayers();
 		
 		for (Variable variable : variables) {
-			System.out.println("VariableIteration");
+			//System.out.println("VariableIteration");
 			if (!motd.toLowerCase().contains(variable.name.toLowerCase())) {
 				continue;
 			}
